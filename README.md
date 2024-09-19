@@ -1,4 +1,5 @@
 Inventory Management System
+
 This is a simple Inventory Management System implemented in Python using SQLite as the database. The system allows users to add, view, and manage inventory items in a SQLite database through a command-line interface (CLI).
 
 Table of Contents

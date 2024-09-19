@@ -1,40 +1,41 @@
-
 Inventory Management System
-A command-line based Inventory Management System built in Python, utilizing SQLite for database management. This system enables users to efficiently manage inventory by adding, viewing, and tracking items in stock.
 
-Features
-Add Items: Insert new items into the inventory with details such as name, price, and quantity.
-View Items: Retrieve a list of all items in the inventory.
-Data Persistence: Items are stored in a SQLite database for persistent storage.
-Installation
-Follow these steps to install and run the Inventory Management System on your local machine.
+A robust Inventory Management System built with Python and SQLite, designed to manage stock effectively. This project offers a streamlined solution for adding, viewing, and managing items in a local database via a command-line interface.
+
+Key Features
+Add New Items: Insert new inventory items with details like name, price, and quantity.
+View Inventory: List all items currently in stock with their respective details.
+SQLite Integration: Persistent data storage through a local SQLite database.
+Getting Started
+To get the Inventory Management System up and running on your local machine, follow the steps outlined below.
 
 Prerequisites
-Python 3.x: Ensure you have Python 3 installed. You can download it from python.org.
-SQLite3: SQLite is required to manage the database. It comes pre-installed with Python.
-Virtual Environment: It's recommended to use a virtual environment to manage dependencies.
-Steps
+Ensure that you have the following installed:
+
+Python 3.x: Download from python.org.
+SQLite: Usually comes pre-installed with Python.
+Installation
 Clone the repository:
 
 bash
 Copy code
 git clone https://github.com/your-username/inventory_proj.git
 cd inventory_proj
-Create a virtual environment (optional but recommended):
+Set up a Virtual Environment (recommended):
 
 bash
 Copy code
 python3 -m venv .venv
 source .venv/bin/activate
-Install the required dependencies:
+Install Dependencies:
 
 bash
 Copy code
 pip install -r requirements.txt
-Set up the database: The database will automatically be created and populated when you run the program.
+Set up the SQLite Database: The SQLite database will be created automatically when you run the application for the first time.
 
-Usage
-Activate the virtual environment (if using one):
+Running the Application
+Activate the virtual environment (if using):
 
 bash
 Copy code
@@ -44,47 +45,48 @@ Run the main program:
 bash
 Copy code
 python main.py
-Working with SQLite:
+SQLite Database Operations: You can manually interact with the SQLite database using the following commands:
 
-To open and inspect your inventory.db:
 bash
 Copy code
 sqlite3 inventory.db
-List all tables:
-bash
+List available tables:
+
+sql
 Copy code
 .tables
 Query the items table:
+
 sql
 Copy code
 SELECT * FROM items;
-Database Schema
-The system uses an SQLite database to store information. The primary table, items, has the following structure:
+Application Usage
+This system allows users to add and view items in their inventory.
 
-Column	Type	Description
-id	INTEGER	Unique identifier for each item
-name	TEXT	Name of the item
-price	REAL	Price per unit of the item
-quantity	INTEGER	Number of units available in inventory
-Example Output
-When you run the program, you will be able to perform the following actions:
-
-Add an item:
+Add an Item:
 
 bash
 Copy code
-Enter item name: Apples
-Enter item price: 0.5
-Enter item quantity: 50
-Item added successfully!
-View items in the inventory:
+Enter item name: Laptop
+Enter item price: 1500
+Enter item quantity: 10
+Item successfully added to inventory.
+View Inventory:
 
 bash
 Copy code
 ID  | Name    | Price | Quantity
 --------------------------------
-1   | Apples  | 0.5   | 50
-2   | Oranges | 0.75  | 30
+1   | Laptop  | 1500  | 10
+2   | Mouse   | 20    | 50
+Database Schema
+The system stores inventory data in an SQLite database (inventory.db). The primary table, items, is structured as follows:
+
+Column	Type	Description
+id	INTEGER	Unique identifier for each item (auto-incremented)
+name	TEXT	Name of the item
+price	REAL	Price per unit of the item
+quantity	INTEGER	Quantity available in stock
 Project Structure
 plaintext
 Copy code
@@ -92,13 +94,18 @@ inventory_proj/
 │
 ├── inventory/
 │   ├── __init__.py
-│   └── inventory.py      # Logic for managing the inventory
+│   └── inventory.py      # Core logic for managing inventory
 │
-├── main.py               # Entry point for running the program
-├── requirements.txt      # List of Python dependencies
-└── README.md             # This file
+├── main.py               # Main application entry point
+├── requirements.txt      # List of project dependencies
+└── README.md             # Project documentation
 Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
+We welcome contributions to improve the system. If you would like to contribute, please follow these steps:
 
+Fork the repository.
+Create a new branch (git checkout -b feature/your-feature).
+Commit your changes (git commit -m 'Add your feature').
+Push to the branch (git push origin feature/your-feature).
+Create a Pull Request.
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. For more details, refer to the LICENSE file.
